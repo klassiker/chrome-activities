@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src-elem 'self'; img-src https: http: data:; style-src 'sha256-njcJ60E0L2+pLjA4p9TusTCBOyK/9zv+UQWNnM3G/n4=';">
+    <style>
+#openTabs label {
+  display: grid;
+  grid-template-columns: min-content minmax(50px, min-content) 16px 40% auto;
+  grid-column-gap: 10px;
+}
+#savedActs label {
+  display: grid;
+  grid-template-columns: min-content min-content min-content 16px 40% auto;
+  grid-column-gap: 10px;
+}
+#openTabs label span, #savedActs label span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.head {
+  margin-bottom: 10px;
+}
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Saved activities</legend>
+      <div id="savedActs"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Currently open tabs</legend>
+      <form id="openTabs">
+        <div class="head">
+          <button id="update" type="button">Update</button>
+          <input type="text" name="name" placeholder="Activity name" required/>
+          <input type="submit" value="Save"/>
+        </div>
+      </form>
+    </fieldset>
+  </body>
+  <script src="options.js"></script>
+</html>
